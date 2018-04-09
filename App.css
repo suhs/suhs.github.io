@@ -1,0 +1,69 @@
+/* app css stylesheet */
+
+h1, .h1 {
+  margin-bottom: 30px !important;
+}
+
+tr, th {
+  padding: .35em !important;
+}
+
+th.title, th.author, th.isbn, th.dueDate{
+  font-weight: 100;
+}
+
+th.title{
+  width: 400px;
+}
+
+th.author{
+  width: 180px;
+}
+
+th.isbn{
+  width: 150px;
+}
+
+uib-accordion{
+  margin-bottom: 5px;
+}
+table.book-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: -webkit-fill-available;
+}
+
+tr.book-header {
+  font-size: 1.5rem;
+  color: #666;
+  border-bottom: 1px solid #ccc;
+  padding-bottom:10px;
+
+}
+
+tr.book {
+  font: 12px Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+  padding:5px;
+  border-bottom-style: dotted;
+  color: #666;
+}
+
+.safe {
+  background-color: #d9ffe4;
+}
+.due {
+  background-color: #ffead9;
+}
+.overdue {
+  background-color: #ffd9e1;
+}
+
+tr.book:last-child {
+  border: none;
+}
+
+#bookList{
+  width: 70em;
+}
