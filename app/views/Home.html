@@ -1,0 +1,27 @@
+<div ng-controller="HomeCtrl">
+    <h1 ng-show="IsState('ST_DISPLAY')">Book Rental Status</h1>
+    <p ng-show="IsState('ST_LOADING')">Loading...</p>
+    <p ng-show="IsState('ST_ERROR')">Unexpected Error Occurred!</p>
+
+    <uib-accordion close-others="false" style="width:80%">
+            <div uib-accordion-group class="panel-default" ng-show="IsState('ST_DISPLAY')" is-open="true" heading="{{cat}} ({{countBooks(cat)}})" ng-repeat="cat in categories" id="bookList">
+                    
+                    <table class = "book-list">
+                            <tr class="book-header">
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>ISBN</th>
+                                    <th>Due Date</th>
+                                </tr>
+                            <tr ng-repeat="library in getBooksByCat(cat)"  ng-class="getBookClass(library.dueDate)">
+                                <th class="title">{{library.title}}</th>
+                                <th class="author">{{library.author}}</th>
+                                <th class="isbn">{{library.isbn}}</th>
+                                <th class="dueDate" >{{library.dueDate  | date:'fullDate'}}</th>
+                            </tr>
+                        </table>
+            <div ng-show="IsState('ST_DISPLAY')" ng-repeat="library in libraryData | filter:'{{category}}'">{{library.title}}</div>
+            </div>
+        </uib-accordion>
+</div>
+            
